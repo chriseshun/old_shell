@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 int main(void);
 void ac_prompt(void);
