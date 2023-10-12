@@ -7,5 +7,6 @@
 #include <stdbool.h>
 
 int main(void);
+void ac_prompt(void);
 
 #endif
