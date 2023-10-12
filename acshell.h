@@ -9,5 +9,7 @@
 
 int main(void);
 void ac_prompt(void);
+void execute_prompt(const char *comd);
+void ac_print(const char *show);
 
 #endif
