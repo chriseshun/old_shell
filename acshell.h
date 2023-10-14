@@ -11,5 +11,6 @@ int main(void);
 void ac_prompt(void);
 void execute_prompt(const char *comd);
 void ac_print(const char *show);
+void read_command(char *comd, size_t size)
 
 #endif
