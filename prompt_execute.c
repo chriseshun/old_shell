@@ -7,11 +7,11 @@ void execute_prompt(const char *comd)
 	if (c_pid == -1)
 	{ 
 		perror("fork");
-		exit(EXIT_FAILURE);
+		exit(EXIT_FAIiLURE);
 	}
 	else if (c_pid == 0) 
 	{
-		execlp(command, command, (char *)NULL);
+		execlp(comd, comd, (char *)NULL);
 		perror("execlp");
 		exit(EXIT_FAILURE);
 	}
