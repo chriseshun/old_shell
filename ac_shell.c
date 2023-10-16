@@ -4,9 +4,13 @@ int main(void)
 {
 	char comd[143];
 
-	for(true)
+	for (true)
 	{
 		ac_prompt();
-		read_comd(comd, sizeof(comd));
-		execute_comd(comd);
+		read_command(comd, sizeof(comd));
+		execute_command(comd);
 	}
+
+
+	return 0;
+}
