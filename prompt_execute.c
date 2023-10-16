@@ -1,5 +1,10 @@
 #include "acshell.h"
 
+/**
+ * execute_command - Execute a command in a new process.
+ * @comd: The command to execute.
+ */
+
 void execute_command(const char *comd)
 {
 	pid_t c_pid = fork();
