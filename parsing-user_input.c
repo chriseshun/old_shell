@@ -11,7 +11,7 @@ void read_command(char *comd, size_t size)
 		}	
 			else
 			{
-			 ac_print("Error while reading input.\n")
+			 ac_print("Error while reading input.\n");
 			 exit(EXIT_FAILURE);
 			}
 	}

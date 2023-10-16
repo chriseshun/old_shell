@@ -4,7 +4,7 @@ int main(void)
 {
 	char comd[143];
 
-	for (true)
+	while (true)
 	{
 		ac_prompt();
 		read_command(comd, sizeof(comd));

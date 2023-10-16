@@ -1,13 +1,13 @@
 #include "acshell.h"
 
-void execute_prompt(const char *comd)
+void execute_command(const char *comd)
 {
 	pid_t c_pid = fork();
 
 	if (c_pid == -1)
 	{ 
 		perror("fork");
-		exit(EXIT_FAIiLURE);
+		exit(EXIT_FAILURE);
 	}
 	else if (c_pid == 0) 
 	{
@@ -17,6 +17,6 @@ void execute_prompt(const char *comd)
 	}
 	else 
 	{
-		wait(NULL);
+		wait (NULL);
 	}
 }
