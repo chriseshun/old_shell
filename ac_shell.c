@@ -1,8 +1,9 @@
 #include "acshell.h"
 
-/*
+/**
  * main - entry point for the shell
  *
+ *comd The character array to store the command
  * Return: Always return 0
  */
 
