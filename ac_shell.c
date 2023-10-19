@@ -1,5 +1,11 @@
 #include "acshell.h"
 
+/*
+ * main - entry point for the shell
+ *
+ * Return: Always return 0
+ */
+
 int main(void)
 {
 	char comd[143];
@@ -12,5 +18,5 @@ int main(void)
 	}
 
 
-	return 0;
+	return (0);
 }
