@@ -1,4 +1,5 @@
 #include "acshell.h"
+
 /**
  * ac_prompt - Display the shell prompt.
  *
