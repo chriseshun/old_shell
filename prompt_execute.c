@@ -10,18 +10,39 @@ void execute_command(const char *comd)
 	pid_t c_pid = fork();
 
 	if (c_pid == -1)
-	{ 
-		perror("fork");
+	{
+		ac_print("Error in fork process.\n");
 		exit(EXIT_FAILURE);
 	}
-	else if (c_pid == 0) 
+	else if (c_pid == 0)
 	{
-		execlp(comd, comd, (char *)NULL);
-		perror("execlp");
-		exit(EXIT_FAILURE);
+		char *args[143];
+
+		int arg_cnt = 0;
+
+		char *envp[] = {
+		       "/bin/ls",
+		       NULL
+		};
+
+		char *token = strtok((char *)comd, " ");
+
+		while (token != NULL)
+
+		{
+			args[arg_cnt++] = token;
+			token = strtok(NULL, " ");
+		}
+		args[arg_cnt] = NULL;
+
+		if (execve(args[0], args, envp) == -1)
+		{
+			ac_print("Error executing command.\n");
+			exit(EXIT_FAILURE);
+		}
 	}
-	else 
+	else
 	{
-		wait (NULL);
+		wait(NULL);
 	}
 }
