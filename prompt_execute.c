@@ -20,7 +20,10 @@ void execute_command(const char *comd)
 
 		int arg_cnt = 0;
 
-		char *envp[] = { NULL };
+		char *envp[] = {
+		       "/bin/ls",
+		       NULL
+		};
 
 		char *token = strtok((char *)comd, " ");
 
