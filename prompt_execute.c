@@ -1,4 +1,5 @@
 #include "acshell.h"
+#include <fcntl.h>
 
 /**
  * execute_command - Execute a command in a new process.
@@ -14,17 +15,19 @@ void execute_command(const char *comd)
 		perror("fork");
 		exit(EXIT_FAILURE);
 	}
-	else if (c_pid == 0)
+
+	if (c_pid == 0)
+
 	{
 		char *args[] = {NULL, NULL};
-
 		char *comd_copy = strdup(comd);
 
 		args[0] = comd_copy;
 
 		if (execve(args[0], args, NULL) == -1)
+
 		{
-			perror("command not found");
+			perror("evecve");
 			exit(EXIT_FAILURE);
 		}
 	}
