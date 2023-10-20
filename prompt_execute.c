@@ -11,33 +11,20 @@ void execute_command(const char *comd)
 
 	if (c_pid == -1)
 	{
-		ac_print("Error in fork process.\n");
+		perror("fork");
 		exit(EXIT_FAILURE);
 	}
 	else if (c_pid == 0)
 	{
-		char *args[143];
+		char *args[] = {NULL, NULL};
 
-		int arg_cnt = 0;
+		char *comd_copy = strdup(comd);
 
-		char *envp[] = {
-		       "/bin/ls",
-		       NULL
-		};
+		args[0] = comd_copy;
 
-		char *token = strtok((char *)comd, " ");
-
-		while (token != NULL)
-
+		if (execve(args[0], args, NULL) == -1)
 		{
-			args[arg_cnt++] = token;
-			token = strtok(NULL, " ");
-		}
-		args[arg_cnt] = NULL;
-
-		if (execve(args[0], args, envp) == -1)
-		{
-			ac_print("Error executing command.\n");
+			perror("command not found");
 			exit(EXIT_FAILURE);
 		}
 	}
